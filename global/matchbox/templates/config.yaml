@@ -1,0 +1,16 @@
+{{- range $i,$s := .Values.regions }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-{{ $i }}
+  labels:
+    app: matchbox
+
+data:
+  {{- range $t := $s.config }}
+    {{- range $u,$v := $t }}
+  - {{ $u }}: {{ $v | quote }}
+    {{- end }}
+  {{- end }}
+---
+{{- end }}
