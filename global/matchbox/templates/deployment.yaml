@@ -1,0 +1,45 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+
+metadata:
+  name: matchbox-deployment
+
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: matchbox
+
+    spec:
+      volumes:
+      {{- range $i,$s := .Values.regions }}
+        - name: certs-{{ $i }}
+          secret:
+            secretName: certs-{{ $i }}
+        - name: config-{{ $i }}
+          configMap:
+            name: config-{{ $i }}
+      {{- end }}
+      containers:
+        - name: matchbox
+          image: hub.global.cloud.sap/monsoon/matchbox:v0.6.1
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            timeoutSeconds: 5
+          volumeMounts:
+          {{- range $i,$s := .Values.regions }}
+            - name: certs-{{ $i }}
+              mountPath: /var/lib/matchbox/assets/kubernetes/ssl/{{ $i }}
+            - name: config-{{ $i }}
+              mountPath: /var/lib/matchbox/groups
+          {{- end }}
