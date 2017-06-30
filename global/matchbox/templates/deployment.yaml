@@ -13,13 +13,13 @@ spec:
 
     spec:
       volumes:
-      {{- range $i,$s := .Values.regions }}
-        - name: certs-{{ $i }}
+      {{- range $region,$region-content := .Values.regions }}
+        - name: certs-{{ $region }}
           secret:
-            secretName: certs-{{ $i }}
-        - name: config-{{ $i }}
+            secretName: certs-{{ $region }}
+        - name: config-{{ $region }}
           configMap:
-            name: config-{{ $i }}
+            name: config-{{ $region }}
       {{- end }}
       containers:
         - name: matchbox
@@ -37,9 +37,9 @@ spec:
               port: 8080
             timeoutSeconds: 5
           volumeMounts:
-          {{- range $i,$s := .Values.regions }}
-            - name: certs-{{ $i }}
-              mountPath: /var/lib/matchbox/assets/kubernetes/ssl/{{ $i }}
-            - name: config-{{ $i }}
+          {{- range $region,$region-content := .Values.regions }}
+            - name: certs-{{ $region }}
+              mountPath: /var/lib/matchbox/assets/kubernetes/ssl/{{ $region }}
+            - name: config-{{ $region }}
               mountPath: /var/lib/matchbox/groups
           {{- end }}
