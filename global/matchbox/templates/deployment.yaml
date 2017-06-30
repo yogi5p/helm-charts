@@ -13,7 +13,7 @@ spec:
 
     spec:
       volumes:
-      {{- range $region,$region-content := .Values.regions }}
+      {{- range $region,$region_content := .Values.regions }}
         - name: certs-{{ $region }}
           secret:
             secretName: certs-{{ $region }}
@@ -37,7 +37,7 @@ spec:
               port: 8080
             timeoutSeconds: 5
           volumeMounts:
-          {{- range $region,$region-content := .Values.regions }}
+          {{- range $region,$region_content := .Values.regions }}
             - name: certs-{{ $region }}
               mountPath: /var/lib/matchbox/assets/kubernetes/ssl/{{ $region }}
             - name: config-{{ $region }}
