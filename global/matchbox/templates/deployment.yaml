@@ -13,14 +13,12 @@ spec:
 
     spec:
       volumes:
-      {{- range $region,$region_content := .Values.regions }}
-        - name: certs-{{ $region }}
+        - name: certs-{{ .Release.Name }}
           secret:
-            secretName: certs-{{ $region }}
-        - name: config-{{ $region }}
+            secretName: certs-{{ .Release.Name }}
+        - name: config-{{ .Release.Name }}
           configMap:
-            name: config-{{ $region }}
-      {{- end }}
+            name: config-{{ .Release.Name }}
       containers:
         - name: matchbox
           image: hub.global.cloud.sap/monsoon/matchbox:v0.6.1
@@ -37,9 +35,7 @@ spec:
               port: 8080
             timeoutSeconds: 5
           volumeMounts:
-          {{- range $region,$region_content := .Values.regions }}
-            - name: certs-{{ $region }}
-              mountPath: /var/lib/matchbox/assets/kubernetes/ssl/{{ $region }}
-            - name: config-{{ $region }}
+            - name: certs-{{ .Release.Name }}
+              mountPath: /var/lib/matchbox/assets/kubernetes/ssl/{{ .Release.Name }}
+            - name: config-{{ .Release.Name }}
               mountPath: /var/lib/matchbox/groups
-          {{- end }}

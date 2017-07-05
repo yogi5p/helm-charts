@@ -1,16 +1,11 @@
-{{- range $region,$region_content := .Values.regions }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: config-{{ $region }}
+  name: config-{{ .Release.Name }}
   labels:
     app: matchbox
 
 data:
-  {{- range $region_config := $region_content.config }}
-    {{- range $key,$value := $region_config }}
+    {{- range $key,$value := .Values.config }}
   - {{ $key }}: {{ $value | quote }}
     {{- end }}
-  {{- end }}
----
-{{- end }}
