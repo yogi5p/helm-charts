@@ -1,0 +1,17 @@
+{
+  "id": "kubernetes-master",
+  "boot": {
+    "kernel": "/assets/coreos/vendored/coreos_production_pxe.vmlinuz",
+    "initrd": ["/assets/coreos/vendored/coreos_production_pxe_image.cpio.gz"],
+    "cmdline": {
+      "coreos.autologin": "",
+      "systemd.setenv=UUID": "${uuid}",
+      "systemd.setenv=MAC": "${net0/mac:hex}",
+      "systemd.setenv=USERNAME": "${username}",
+      "systemd.setenv=PASSWORD": "${password}",
+      "cloud-config-url": "https://${username}:${password}@alpha.bootcfg.global.cloud.sap/cloud?uuid=${uuid}&mac=${net0/mac:hex}"
+    }
+  },
+  "cloud_id": "bootstrap-legacy-storage.yaml",
+  "ignition_id": "master.yaml"
+}

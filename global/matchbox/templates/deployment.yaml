@@ -19,6 +19,9 @@ spec:
         - name: config-{{ .Release.Name }}
           configMap:
             name: config-{{ .Release.Name }}
+        - name: ignition-{{ .Release.Name }}
+          configMap:
+            name: ignition-{{ .Release.Name }}
       containers:
         - name: matchbox
           image: hub.global.cloud.sap/monsoon/matchbox:v0.6.1
@@ -39,3 +42,5 @@ spec:
               mountPath: /var/lib/matchbox/assets/kubernetes/ssl/{{ .Release.Name }}
             - name: config-{{ .Release.Name }}
               mountPath: /var/lib/matchbox/groups
+            - name: ignition-{{ .Release.Name }}
+              mountPath: /var/lib/matchbox/ignition

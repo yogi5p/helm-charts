@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ignition-{{ .Release.Name }}
+  labels:
+    app: matchbox
+
+data:
+{{ (.Files.Glob "ignition/*.yaml").AsConfig | indent 2 }}
