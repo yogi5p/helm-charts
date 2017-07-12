@@ -2,718 +2,769 @@
 ignition_version: 1
 storage:
   filesystems:
-    - device: /dev/disk/by-label/ROOT
-      format: ext4
-      files:
-        - path: /etc/ssl/certs/SAPGlobalRootCA.pem
-          mode: 0644
-          contents: |
-            -----BEGIN CERTIFICATE-----
-            MIIGTDCCBDSgAwIBAgIQXQPZPTFhXY9Iizlwx48bmTANBgkqhkiG9w0BAQsFADBO
-            MQswCQYDVQQGEwJERTERMA8GA1UEBwwIV2FsbGRvcmYxDzANBgNVBAoMBlNBUCBB
-            RzEbMBkGA1UEAwwSU0FQIEdsb2JhbCBSb290IENBMB4XDTEyMDQyNjE1NDE1NVoX
-            DTMyMDQyNjE1NDYyN1owTjELMAkGA1UEBhMCREUxETAPBgNVBAcMCFdhbGxkb3Jm
-            MQ8wDQYDVQQKDAZTQVAgQUcxGzAZBgNVBAMMElNBUCBHbG9iYWwgUm9vdCBDQTCC
-            AiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAOrxJKFFA1eTrZg1Ux8ax6n/
-            LQRHZlgLc2FZpfyAgwvkt71wLkPLiTOaRb3Bd1dyydpKcwJLy0dzGkunzNkPRSFz
-            bKy2IPS0RS45hUCCPzhGnqQM6TcDYWeWpSUvygqujgb/cAG0mSJpvzAD3SMDQ+VJ
-            Az5Ryq4IrP7LkfCb63LKZxLsHEkEcNKoGPsSsd4LTwuEIyM3ZHcCoA97m6hvgLWV
-            GLzLIQMEblkswqX29z7JZH+zJopoqZB6eEogE2YpExkw52PufytEslDY3dyVubjp
-            GlvD4T03F2zm6CYleMwgWbATLVYvk2I9WfqPAP+ln2IU9DZzegSMTWHCE+jizaiq
-            b5f5s7m8f+cz7ndHSrz8KD/S9iNdWpuSlknHDrh+3lFTX/uWNBRs5mC/cdejcqS1
-            v6erflyIfqPWWO6PxhIs49NL9Lix3ou6opJo+m8K757T5uP/rQ9KYALIXvl2uFP7
-            0CqI+VGfossMlSXa1keagraW8qfplz6ffeSJQWO/+zifbfsf0tzUAC72zBuO0qvN
-            E7rSbqAfpav/o010nKP132gbkb4uOkUfZwCuvZjA8ddsQ4udIBRj0hQlqnPLJOR1
-            PImrAFC3PW3NgaDEo9QAJBEp5jEJmQghNvEsmzXgABebwLdI9u0VrDz4mSb6TYQC
-            XTUaSnH3zvwAv8oMx7q7AgMBAAGjggEkMIIBIDAOBgNVHQ8BAf8EBAMCAQYwEgYD
-            VR0TAQH/BAgwBgEB/wIBATAdBgNVHQ4EFgQUg8dB/Q4mTynBuHmOhnrhv7XXagMw
-            gdoGA1UdIASB0jCBzzCBzAYKKwYBBAGFNgRkATCBvTAmBggrBgEFBQcCARYaaHR0
-            cDovL3d3dy5wa2kuY28uc2FwLmNvbS8wgZIGCCsGAQUFBwICMIGFHoGCAEMAZQBy
-            AHQAaQBmAGkAYwBhAHQAZQAgAFAAbwBsAGkAYwB5ACAAYQBuAGQAIABDAGUAcgB0
-            AGkAZgBpAGMAYQB0AGkAbwBuACAAUAByAGEAYwB0AGkAYwBlACAAUwB0AGEAdABl
-            AG0AZQBuAHQAIABvAGYAIABTAEEAUAAgAEEARzANBgkqhkiG9w0BAQsFAAOCAgEA
-            0HpCIaC36me6ShB3oHDexA2a3UFcU149nZTABPKT+yUCnCQPzvK/6nJUc5I4xPfv
-            2Q8cIlJjPNRoh9vNSF7OZGRmWQOFFrPWeqX5JA7HQPsRVURjJMeYgZWMpy4t1Tof
-            lF13u6OY6xV6A5kQZIISFj/dOYLT3+O7wME5SItL+YsNh6BToNU0xAZt71Z8JNdY
-            VJb2xSPMzn6bNXY8ioGzHlVxfEvzMqebV0KY7BTXR3y/Mh+v/RjXGmvZU6L/gnU7
-            8mTRPgekYKY8JX2CXTqgfuW6QSnJ+88bHHMhMP7nPwv+YkPcsvCPBSY08ykzFATw
-            SNoKP1/QFtERVUwrUXt3Cufz9huVysiy23dEyfAglgCCRWA+ZlaaXfieKkUWCJaE
-            Kw/2Jqz02HDc7uXkFLS1BMYjr3WjShg1a+ulYvrBhNtseRoZT833SStlS/jzZ8Bi
-            c1dt7UOiIZCGUIODfcZhO8l4mtjh034hdARLF0sUZhkVlosHPml5rlxh+qn8yJiJ
-            GJ7CUQtNCDBVGksVlwew/+XnesITxrDjUMu+2297at7wjBwCnO93zr1/wsx1e2Um
-            Xn+IfM6K/pbDar/y6uI9rHlyWu4iJ6cg7DAPJ2CCklw/YHJXhDHGwheO/qSrKtgz
-            PGHZoN9jcvvvWDLUGtJkEotMgdFpEA2XWR83H4fVFVc=
-            -----END CERTIFICATE-----
-        - path: /etc/ssl/certs/SAPNetCA_G2.pem
-          mode: 0644
-          contents: |
-            -----BEGIN CERTIFICATE-----
-            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
-            7HJNBB1ZTjnrxJAgCQgNBIQ=
-            -----END CERTIFICATE-----
-        - path: /etc/modules-load.d/br_netfilter.conf
-          mode: 0644
-          contents: |
-            br_netfilter
-        - path: /opt/bin/kubelet-wrapper
-          mode: 0755
-          contents: |
-            #!/bin/bash
-            # Wrapper for launching kubelet via rkt-fly stage1.
-            #
-            # Make sure to set KUBELET_VERSION to an image tag published here:
-            # https://quay.io/repository/coreos/hyperkube?tab=tags Alternatively,
-            # override $KUBELET_ACI to a custom location.
+    - name: "root"
+      mount:
+        device: /dev/disk/by-label/ROOT
+        format: ext4
+  files:
+    - filesystem: "root"
+      path: /etc/ssl/certs/SAPGlobalRootCA.pem
+      mode: 0644
+      contents: 
+        inline: |
+          -----BEGIN CERTIFICATE-----
+          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
+          -----END CERTIFICATE-----
+    - filesystem: "root"
+      path: /etc/ssl/certs/SAPNetCA_G2.pem
+      mode: 0644
+      contents: 
+        inline: |
+          -----BEGIN CERTIFICATE-----
+          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
+          7HJNBB1ZTjnrxJAgCQgNBIQ=
+          -----END CERTIFICATE-----
+    - filesystem: "root"
+      path: /etc/modules-load.d/br_netfilter.conf
+      mode: 0644
+      contents: 
+        inline: |
+          br_netfilter
+    - filesystem: "root"
+      path: /opt/bin/kubelet-wrapper
+      mode: 0755
+      contents: 
+        inline: |
+          #!/bin/bash
+          # Wrapper for launching kubelet via rkt-fly stage1.
+          #
+          # Make sure to set KUBELET_VERSION to an image tag published here:
+          # https://quay.io/repository/coreos/hyperkube?tab=tags Alternatively,
+          # override $KUBELET_ACI to a custom location.
 
-            set -e
+          set -e
 
-            if [ -z "${KUBELET_VERSION}" ]; then
-                echo "ERROR: must set KUBELET_VERSION"
-                exit 1
-            fi
+          if [ -z "${KUBELET_VERSION}" ]; then
+              echo "ERROR: must set KUBELET_VERSION"
+              exit 1
+          fi
 
-            KUBELET_ACI="${KUBELET_ACI:-quay.io/coreos/hyperkube}"
+          KUBELET_ACI="${KUBELET_ACI:-quay.io/coreos/hyperkube}"
 
-            mkdir --parents /etc/kubernetes
-            mkdir --parents /var/lib/docker
-            mkdir --parents /var/lib/kubelet
-            mkdir --parents /var/lib/cni
-            mkdir --parents /var/log/containers
-            mkdir --parents /run/kubelet
-            
-            exec /usr/bin/rkt run \
-              --volume etc-kubernetes,kind=host,source=/etc/kubernetes \
-              --volume etc-ssl-certs,kind=host,source=/etc/ssl/certs \
-              --volume var-lib-docker,kind=host,source=/var/lib/docker \
-              --volume var-lib-kubelet,kind=host,source=/var/lib/kubelet,recursive=true \
-              --volume var-lib-cni,kind=host,source=/var/lib/cni \
-              --volume var-log-containers,kind=host,source=/var/log/containers \
-              --volume os-release,kind=host,source=/usr/lib/os-release \
-              --volume lib-modules,kind=host,source=/lib/modules,readOnly=true \
-              --volume run,kind=host,source=/run \
-              --mount volume=etc-kubernetes,target=/etc/kubernetes \
-              --mount volume=etc-ssl-certs,target=/etc/ssl/certs \
-              --mount volume=var-lib-docker,target=/var/lib/docker \
-              --mount volume=var-lib-kubelet,target=/var/lib/kubelet \
-              --mount volume=var-lib-cni,target=/var/lib/cni \
-              --mount volume=var-log-containers,target=/var/log/containers \
-              --mount volume=os-release,target=/etc/os-release \
-              --mount volume=lib-modules,target=/lib/modules \
-              --mount volume=run,target=/run \
-              --trust-keys-from-https \
-              $RKT_OPTS \
-              --stage1-from-dir=stage1-fly.aci \
-              ${KUBELET_ACI}:${KUBELET_VERSION} --exec=/kubelet -- "$@"
-        - path: /root/.toolboxrc
-          mode: 0600
-          contents: |
-            TOOLBOX_DOCKER_IMAGE=sapcc/toolbox
-            TOOLBOX_DOCKER_TAG=latest
-            TOOLBOX_USER=root
-        - path: /etc/hostname
-          mode: 0420
-          contents: |
-            {{.hostname}}.{{.domain}}
-        - path: /etc/hosts
-          mode: 0420
-          contents: |
-            127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
-            {{range $node := .nodes}}
-            {{$node.address}} {{$node.hostname}} {{$node.fqdn}}
-            {{end}}
-        - path: /etc/systemd/resolved.conf
-          mode: 0644
-          contents: |
-            [Resolve]
-            DNS={{if index .internal_network.dns 0}}{{index .internal_network.dns 0}}{{end}} {{if index .internal_network.dns 1}}{{index .internal_network.dns 1}}{{end}}
-            LLMNR=false
-        - path: /etc/systemd/timesyncd.conf
-          mode: 0644
-          contents: |
-            [Time]
-            NTP=timehost1.cc.cloud.sap timehost2.cc.cloud.sap timehost3.cc.cloud.sap
-        - path: /etc/coreos/update.conf
-          mode: 0644
-          contents: |
-            GROUP=stable
-            LOCKSMITHD_GROUP={{.role}}
-            LOCKSMITHD_ENDPOINT=localhost:2379
-            REBOOT_STRATEGY=best-effort
-        - path: /etc/idmapd.conf
-          mode: 0644
-          contents: |
-            [General]
-            Domain = defaultv4iddomain.com
-        - path: /etc/metadata
-          mode: 0644
-          contents: |
-            HOSTNAME={{.hostname}}
-            DOMAIN={{.domain}}
-            REGION={{.region}}
-            KUBERNETES_DNS_ADDRESS_EXTERNAL={{.kubernetes.dns_external_address}}
-            KUBERNETES_DNS_ADDRESS_SERVICE={{.kubernetes.dns_service_address}}
-        - path: /var/lib/iptables/rules-save
-          mode: 0644
-          contents: |
-            {{if eq .role "master"}}
-            *filter
-            :INPUT ACCEPT [0:0]
-            :FORWARD ACCEPT [0:0] 
-            :OUTPUT ACCEPT [0:0]
-            -A FORWARD -d {{.kubernetes.services_subnet_cidr}} -o bond2 -m comment --comment "Discard service net traffic it should not leave the host" -j DROP
-            -A OUTPUT -d {{.kubernetes.services_subnet_cidr}} -o bond2 -m comment --comment "Discard service net traffic it should not leave the host" -j DROP
-            COMMIT
-            {{end}}
-            *nat
-            :PREROUTING ACCEPT [0:0]
-            :INPUT ACCEPT [0:0]
-            :OUTPUT ACCEPT [0:0]
-            :POSTROUTING ACCEPT [0:0]
-            {{if eq .role "master"}}
-            :KUBE-SERVICES - [0:0]
-            {{end}}
-            -A POSTROUTING -s {{.kubernetes.nat_subnet_cidr}} -d {{.kubernetes.master_address_cidr}} -m comment --comment "No need to NAT move along" -j ACCEPT
-            -A POSTROUTING -s {{.kubernetes.nat_subnet_cidr}} -d {{.internal_network.subnet_cidr}} -m comment --comment "No need to NAT move along" -j ACCEPT
-            -A POSTROUTING -s {{.kubernetes.nat_subnet_cidr}} -d {{.external_network.subnet_cidr}} -m comment --comment "No need to NAT move along" -j ACCEPT
-            {{if eq .role "pet"}}
-            -A POSTROUTING -s {{.kubernetes.nat_subnet_cidr}} ! -d {{.kubernetes.nat_subnet_cidr}} -m comment --comment "On pets Masq traffic outside of the cluster as kubenet masq is disabled" -j MASQUERADE
-            {{end}}
-            {{if eq .role "master"}}
-            -A PREROUTING -d {{.kubernetes.services_subnet_cidr}} -i bond2 -m comment --comment "need to SNAT service traffic from external like kube-proxy does" -j MARK --set-xmark 0x4000/0x4000
-            -A PREROUTING -m comment --comment "kubernetes service portals" -j KUBE-SERVICES
-            {{end}}
-            COMMIT
-        - path: /etc/kubernetes/manifests/.keep
-          mode: 0644
-          contents: |
-            .keep 
+          mkdir --parents /etc/kubernetes
+          mkdir --parents /var/lib/docker
+          mkdir --parents /var/lib/kubelet
+          mkdir --parents /var/lib/cni
+          mkdir --parents /var/log/containers
+          mkdir --parents /run/kubelet
+          
+          exec /usr/bin/rkt run \
+            --volume etc-kubernetes,kind=host,source=/etc/kubernetes \
+            --volume etc-ssl-certs,kind=host,source=/etc/ssl/certs \
+            --volume var-lib-docker,kind=host,source=/var/lib/docker \
+            --volume var-lib-kubelet,kind=host,source=/var/lib/kubelet,recursive=true \
+            --volume var-lib-cni,kind=host,source=/var/lib/cni \
+            --volume var-log-containers,kind=host,source=/var/log/containers \
+            --volume os-release,kind=host,source=/usr/lib/os-release \
+            --volume lib-modules,kind=host,source=/lib/modules,readOnly=true \
+            --volume run,kind=host,source=/run \
+            --mount volume=etc-kubernetes,target=/etc/kubernetes \
+            --mount volume=etc-ssl-certs,target=/etc/ssl/certs \
+            --mount volume=var-lib-docker,target=/var/lib/docker \
+            --mount volume=var-lib-kubelet,target=/var/lib/kubelet \
+            --mount volume=var-lib-cni,target=/var/lib/cni \
+            --mount volume=var-log-containers,target=/var/log/containers \
+            --mount volume=os-release,target=/etc/os-release \
+            --mount volume=lib-modules,target=/lib/modules \
+            --mount volume=run,target=/run \
+            --trust-keys-from-https \
+            $RKT_OPTS \
+            --stage1-from-dir=stage1-fly.aci \
+            ${KUBELET_ACI}:${KUBELET_VERSION} --exec=/kubelet -- "$@"
+    - filesystem: "root"
+      path: /root/.toolboxrc
+      mode: 0600
+      contents: 
+        inline: |
+          TOOLBOX_DOCKER_IMAGE=sapcc/toolbox
+          TOOLBOX_DOCKER_TAG=latest
+          TOOLBOX_USER=root
+    - filesystem: "root" 
+      path: /etc/hostname
+      mode: 0420
+      contents: 
+        inline: |
+          {{.hostname}}.{{.domain}}
+    - filesystem: "root"
+      path: /etc/hosts
+      mode: 0420
+      contents: 
+        inline: |
+          127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+          {{range $node := .nodes}}
+          {{$node.address}} {{$node.hostname}} {{$node.fqdn}}
+          {{end}}
+    - filesystem: "root"
+      path: /etc/systemd/resolved.conf
+      mode: 0644
+      contents: 
+        inline: |
+          [Resolve]
+          DNS={{if index .internal_network.dns 0}}{{index .internal_network.dns 0}}{{end}} {{if index .internal_network.dns 1}}{{index .internal_network.dns 1}}{{end}}
+          LLMNR=false
+    - filesystem: "root"
+      path: /etc/systemd/timesyncd.conf
+      mode: 0644
+      contents: 
+        inline: |
+          [Time]
+          NTP=timehost1.cc.cloud.sap timehost2.cc.cloud.sap timehost3.cc.cloud.sap
+    - filesystem: "root"
+      path: /etc/coreos/update.conf
+      mode: 0644
+      contents: 
+        inline: |
+          GROUP=stable
+          LOCKSMITHD_GROUP={{.role}}
+          LOCKSMITHD_ENDPOINT=localhost:2379
+          REBOOT_STRATEGY=best-effort
+    - filesystem: "root"
+      path: /etc/idmapd.conf
+      mode: 0644
+      contents: 
+        inline: |
+          [General]
+          Domain = defaultv4iddomain.com
+    - filesystem: "root"
+      path: /etc/metadata
+      mode: 0644
+      contents:
+        inline: |
+          HOSTNAME={{.hostname}}
+          DOMAIN={{.domain}}
+          REGION={{.region}}
+          KUBERNETES_DNS_ADDRESS_EXTERNAL={{.kubernetes.dns_external_address}}
+          KUBERNETES_DNS_ADDRESS_SERVICE={{.kubernetes.dns_service_address}}
+    - filesystem: "root"
+      path: /var/lib/iptables/rules-save
+      mode: 0644
+      contents:
+        inline: |
+          {{if eq .role "master"}}
+          *filter
+          :INPUT ACCEPT [0:0]
+          :FORWARD ACCEPT [0:0] 
+          :OUTPUT ACCEPT [0:0]
+          -A FORWARD -d {{.kubernetes.services_subnet_cidr}} -o bond2 -m comment --comment "Discard service net traffic it should not leave the host" -j DROP
+          -A OUTPUT -d {{.kubernetes.services_subnet_cidr}} -o bond2 -m comment --comment "Discard service net traffic it should not leave the host" -j DROP
+          COMMIT
+          {{end}}
+          *nat
+          :PREROUTING ACCEPT [0:0]
+          :INPUT ACCEPT [0:0]
+          :OUTPUT ACCEPT [0:0]
+          :POSTROUTING ACCEPT [0:0]
+          {{if eq .role "master"}}
+          :KUBE-SERVICES - [0:0]
+          {{end}}
+          -A POSTROUTING -s {{.kubernetes.nat_subnet_cidr}} -d {{.kubernetes.master_address_cidr}} -m comment --comment "No need to NAT move along" -j ACCEPT
+          -A POSTROUTING -s {{.kubernetes.nat_subnet_cidr}} -d {{.internal_network.subnet_cidr}} -m comment --comment "No need to NAT move along" -j ACCEPT
+          -A POSTROUTING -s {{.kubernetes.nat_subnet_cidr}} -d {{.external_network.subnet_cidr}} -m comment --comment "No need to NAT move along" -j ACCEPT
+          {{if eq .role "pet"}}
+          -A POSTROUTING -s {{.kubernetes.nat_subnet_cidr}} ! -d {{.kubernetes.nat_subnet_cidr}} -m comment --comment "On pets Masq traffic outside of the cluster as kubenet masq is disabled" -j MASQUERADE
+          {{end}}
+          {{if eq .role "master"}}
+          -A PREROUTING -d {{.kubernetes.services_subnet_cidr}} -i bond2 -m comment --comment "need to SNAT service traffic from external like kube-proxy does" -j MARK --set-xmark 0x4000/0x4000
+          -A PREROUTING -m comment --comment "kubernetes service portals" -j KUBE-SERVICES
+          {{end}}
+          COMMIT
+    - filesystem: "root"
+      path: /etc/kubernetes/manifests/.keep
+      mode: 0644
+      contents: 
+        inline: |
+          .keep 
 {{if eq .role "master"}}
-        - path: /etc/kubernetes/manifests/etcd.manifest
-          mode: 0644
-          contents: |
-            apiVersion: v1
-            kind: Pod
-            metadata: 
-              name: etcd 
-              namespace: kube-system
-            spec: 
-              hostNetwork: true
-              volumes:
-                - name: var-lib-etcd2
-                  hostPath:
-                    path: /var/lib/etcd2
-              containers: 
-                - name: etcd
-                  image: sapcc/etcd:v2.2.5
-                  env:
-                    - name: ETCD_NAME
-                      value: {{.hostname}}
-                    - name: ETCD_DATA_DIR
-                      value: /var/lib/etcd2/{{.hostname}}
-                    - name: ETCD_INITIAL_CLUSTER
-                      value: {{.kubernetes.etcd_initial_cluster}}
-                    - name: ETCD_INITIAL_CLUSTER_TOKEN
-                      value: kubernetes-{{.region}}
-                    - name: ETCD_INITIAL_ADVERTISE_PEER_URLS
-                      value: http://{{.internal_network.address}}:2380
-                    - name: ETCD_ADVERTISE_CLIENT_URLS
-                      value: http://localhost:2379
-                    - name: ETCD_LISTEN_PEER_URLS
-                      value: http://{{.internal_network.address}}:2380
-                    - name: ETCD_LISTEN_CLIENT_URLS
-                      value: http://127.0.0.1:2379,http://{{.internal_network.address}}:2379
-                  livenessProbe:
-                    httpGet:
-                      host: 127.0.0.1
-                      path: /health
-                      port: 2379 
-                    initialDelaySeconds: 300
-                    timeoutSeconds: 5
-                  volumeMounts:
-                    - name: var-lib-etcd2
-                      mountPath: /var/lib/etcd2
-
-        - path: /etc/kubernetes/manifests/kubernetes.manifest
-          mode: 0644
-          contents: |
-            apiVersion: v1
-            kind: Pod
-            metadata: 
-              name: kubernetes
-              namespace: kube-system
-            spec: 
-              hostNetwork: true
-              volumes:
-                - name: etc-kubernetes
-                  hostPath:
-                    path: /etc/kubernetes
-                - name: etc-ssl-certs 
-                  hostPath:
-                    path: /etc/ssl/certs/
-              containers: 
-                - name: apiserver
-                  securityContext:
-                    capabilities:
-                      add:
-                        - NET_ADMIN
-                  image: sapcc/hyperkube-amd64:{{.kubernetes.version}}
-                  args: 
-                    - /hyperkube
-                    - apiserver
-                    - --admission-control=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,ResourceQuota
-                    - --allow-privileged=true
-            # This flag ensures 3 endpoints in the kubernetes service which is wrong when one node is down
-            # leading to traffic hitting the downed node.
-            # Currently this leads to reconfiguring endpoints when this is commented out, but will not pose
-            # a problem until someone uses the ingress resource.
-            #        - --apiserver-count=3
-                    - --authorization-mode=ABAC
-                    - --authorization-policy-file=/etc/kubernetes/authorizations.jsonl
-                    - --advertise-address={{.kubernetes.master_address}}
-                    - --client-ca-file=/etc/kubernetes/ssl/ca.pem
-                    - --etcd-servers=http://127.0.0.1:2379
-                    - --kubelet-certificate-authority=/etc/kubernetes/ssl/ca.pem
-                    - --kubelet-client-certificate=/etc/kubernetes/ssl/kubelet-{{.hostname}}-{{.internal_network.address}}.pem
-                    - --kubelet-client-key=/etc/kubernetes/ssl/kubelet-{{.hostname}}-{{.internal_network.address}}-key.pem
-                    - --kubelet-https=true
-                    - --runtime-config=extensions/v1beta1=true,extensions/v1beta1/thirdpartyresources=true
-                    - --secure_port=443
-                    - --service-account-key-file=/etc/kubernetes/ssl/ca-key.pem
-                    - --service-cluster-ip-range={{.kubernetes.services_subnet_cidr}}
-                    - --tls-cert-file=/etc/kubernetes/ssl/apiserver-{{.hostname}}-{{.internal_network.address}}.pem
-                    - --tls-private-key-file=/etc/kubernetes/ssl/apiserver-{{.hostname}}-{{.internal_network.address}}-key.pem
-                    - --bind-address={{.kubernetes.master_address}}
-                  lifecycle:
-                    postStart:
-                      exec:
-                        command:
-                          - sh
-                          - -ec
-                          - |
-                            if ! ip addr list dummy0 | grep -q {{.kubernetes.master_address_cidr}}; then
-                              ip addr add {{.kubernetes.master_address_cidr}} dev dummy0
-                            fi
-                            if ! iptables -t nat -C PREROUTING -p tcp -d {{.internal_network.address}} --dport 443 -j DNAT --to-destination {{.kubernetes.master_address}}:443 2>/dev/null; then
-                              iptables -t nat -A PREROUTING -p tcp -d {{.internal_network.address}} --dport 443 -j DNAT --to-destination {{.kubernetes.master_address}}:443
-                            fi
-                    preStop:
-                      exec:
-                        command:
-                          - sh
-                          - -ec
-                          - |
-                            if iptables -t nat -C PREROUTING -p tcp -d {{.internal_network.address}} --dport 443 -j DNAT --to-destination {{.kubernetes.master_address}}:443 2>/dev/null; then
-                              iptables -t nat -D PREROUTING -p tcp -d {{.internal_network.address}} --dport 443 -j DNAT --to-destination {{.kubernetes.master_address}}:443
-                            fi
-                            if ip addr list dummy0 | grep -q {{.kubernetes.master_address_cidr}}; then
-                              ip addr del {{.kubernetes.master_address_cidr}} dev dummy0
-                            fi
-                  livenessProbe:
-                    httpGet:
-                      host: 127.0.0.1 
-                      path: /healthz
-                      port: 8080
-                    initialDelaySeconds: 15
-                    timeoutSeconds: 1
-                  volumeMounts:
-                    - mountPath: /etc/kubernetes
-                      name: etc-kubernetes
-                      readOnly: true
-                    - mountPath: /etc/ssl/certs
-                      name: etc-ssl-certs 
-                      readOnly: true
-                - name: controller-manager
-                  image: sapcc/hyperkube-amd64:{{.kubernetes.version}}
-                  args: 
-                    - /hyperkube
-                    - controller-manager
-                    - --kubeconfig=/etc/kubernetes/config/controller-manager
-                    - --leader-elect=true
-                    - --root-ca-file=/etc/kubernetes/ssl/ca.pem
-                    - --service-account-private-key-file=/etc/kubernetes/ssl/ca-key.pem
-                  livenessProbe:
-                    httpGet:
-                      host: 127.0.0.1 
-                      path: /healthz
-                      port: 10252
-                    initialDelaySeconds: 15
-                    timeoutSeconds: 1
-                  volumeMounts:
-                    - mountPath: /etc/kubernetes
-                      name: etc-kubernetes
-                      readOnly: true
-                - name: scheduler
-                  image: sapcc/hyperkube-amd64:{{.kubernetes.version}}
-                  args: 
-                    - /hyperkube
-                    - scheduler 
-                    - --kubeconfig=/etc/kubernetes/config/scheduler
-                    - --leader-elect=true
-                  livenessProbe:
-                    httpGet:
-                      host: 127.0.0.1 
-                      path: /healthz
-                      port: 10251
-                    initialDelaySeconds: 15
-                    timeoutSeconds: 1
-                  volumeMounts:
-                    - mountPath: /etc/kubernetes
-                      name: etc-kubernetes
-                      readOnly: true
-        - path: /etc/kubernetes/authorizations.jsonl
-          mode: 0644
-          contents: |
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"*", "nonResourcePath": "*", "readonly": true}}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"kubelet",                                       "namespace": "*",               "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"proxy",                                         "namespace": "*",               "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"dns",                                           "namespace": "*",               "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"scheduler",                                     "namespace": "*",               "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"controller-manager",                            "namespace": "*",               "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"monsoon",                                       "namespace": "*",               "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"cfm",                                           "namespace": "cfm",             "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"support",                                       "namespace": "quay-enterprise", "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"user@monsoon",                                  "namespace": "*",               "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"user@admin",                                    "namespace": "*",               "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"user@viewer",                                   "namespace": "*",               "resource": "*", "apiGroup": "*", "readonly": true }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"user@cfm",                                      "namespace": "cfm",             "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"user@support",                                  "namespace": "quay-enterprise", "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"system:serviceaccount:kube-system:default",     "namespace": "*",               "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"system:serviceaccount:kube-monitoring:default", "namespace": "*",               "resource": "*", "apiGroup": "*", "readonly": true }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"system:serviceaccount:quay-enterprise:default", "namespace": "quay-enterprise", "resource": "*", "apiGroup": "*" }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"system:serviceaccount:elk:default",         "namespace": "*",               "resource": "*", "apiGroup": "*", "readonly": true }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"system:serviceaccount:monsoon3:default",        "namespace": "*",               "resource": "*", "apiGroup": "*", "readonly": true }}
-            {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"system:serviceaccount:sentry:default",          "namespace": "*",               "resource": "*", "apiGroup": "*" }}
-        - path: /etc/kubernetes/manifests/kube-dns.manifest
-          mode: 0644
-          contents: |
-            apiVersion: v1
-            kind: Pod
-            metadata:
-              name: kube-dns
-              namespace: kube-system
-              labels:
-                k8s-app: kube-dns
-                kubernetes.io/cluster-service: "true"
-            spec:
-              containers:
-              - name: kubedns
-                image: sapcc/kubedns-amd64:1.8
-                resources:
-                  # TODO: Set memory limits when we've profiled the container for large
-                  # clusters, then set request = limit to keep this container in
-                  # guaranteed class. Currently, this container falls into the
-                  # "burstable" category so the kubelet doesn't backoff from restarting it.
-                  limits:
-                    memory: 170Mi
-                  requests:
-                    cpu: 100m
-                    memory: 70Mi
-                livenessProbe:
-                  httpGet:
-                    path: /healthz
-                    port: 8080
-                    scheme: HTTP
-                  initialDelaySeconds: 60
-                  timeoutSeconds: 5
-                  successThreshold: 1
-                  failureThreshold: 5
-                readinessProbe:
-                  httpGet:
-                    path: /readiness
-                    port: 8081
-                    scheme: HTTP
-                  # we poll on pod startup for the Kubernetes master service and
-                  # only setup the /readiness HTTP server once that's available.
-                  initialDelaySeconds: 30
-                  timeoutSeconds: 5
-                args:
-                - --domain={{.kubernetes.domain}}
-                - --dns-port=10053
-                - --kubecfg-file=/etc/kubernetes/config/dns
-                - --v=0
+    - filesystem: "root"
+      path: /etc/kubernetes/manifests/etcd.manifest
+      mode: 0644
+      contents:
+        inline: |
+          apiVersion: v1
+          kind: Pod
+          metadata: 
+            name: etcd 
+            namespace: kube-system
+          spec: 
+            hostNetwork: true
+            volumes:
+              - name: var-lib-etcd2
+                hostPath:
+                  path: /var/lib/etcd2
+            containers: 
+              - name: etcd
+                image: sapcc/etcd:v2.2.5
                 env:
-                - name: PROMETHEUS_PORT
-                  value: "10055"
+                  - name: ETCD_NAME
+                    value: {{.hostname}}
+                  - name: ETCD_DATA_DIR
+                    value: /var/lib/etcd2/{{.hostname}}
+                  - name: ETCD_INITIAL_CLUSTER
+                    value: {{.kubernetes.etcd_initial_cluster}}
+                  - name: ETCD_INITIAL_CLUSTER_TOKEN
+                    value: kubernetes-{{.region}}
+                  - name: ETCD_INITIAL_ADVERTISE_PEER_URLS
+                    value: http://{{.internal_network.address}}:2380
+                  - name: ETCD_ADVERTISE_CLIENT_URLS
+                    value: http://localhost:2379
+                  - name: ETCD_LISTEN_PEER_URLS
+                    value: http://{{.internal_network.address}}:2380
+                  - name: ETCD_LISTEN_CLIENT_URLS
+                    value: http://127.0.0.1:2379,http://{{.internal_network.address}}:2379
+                livenessProbe:
+                  httpGet:
+                    host: 127.0.0.1
+                    path: /health
+                    port: 2379 
+                  initialDelaySeconds: 300
+                  timeoutSeconds: 5
                 volumeMounts:
-                - mountPath: /etc/kubernetes
-                  name: etc-kubernetes
-                  readOnly: true
-                ports:
-                - containerPort: 10053
-                  name: dns-local
-                  protocol: UDP
-                - containerPort: 10053
-                  name: dns-tcp-local
-                  protocol: TCP
-                - containerPort: 10055
-                  name: metrics
-                  protocol: TCP
-              - name: dnsmasq
-                image: sapcc/kube-dnsmasq-amd64:1.4
-                livenessProbe:
-                  httpGet:
-                    path: /healthz-dnsmasq
-                    port: 8080
-                    scheme: HTTP
-                  initialDelaySeconds: 60
-                  timeoutSeconds: 5
-                  successThreshold: 1
-                  failureThreshold: 5
-                args:
-                - --cache-size=1000
-                - --no-resolv
-                - --server=127.0.0.1#10053
-                ports:
-                - containerPort: 53
-                  name: dns
-                  protocol: UDP
-                - containerPort: 53
-                  name: dns-tcp
-                  protocol: TCP
-                resources:
-                  requests:
-                    cpu: 150m
-                    memory: 10Mi
-              - name: dnsmasq-metrics
-                image: sapcc/dnsmasq-metrics-amd64:1.0
-                livenessProbe:
-                  httpGet:
-                    path: /metrics
-                    port: 10054
-                    scheme: HTTP
-                  initialDelaySeconds: 60
-                  timeoutSeconds: 5
-                  successThreshold: 1
-                  failureThreshold: 5
-                args:
-                - --v=2
-                - --logtostderr
-                ports:
-                - containerPort: 10054
-                  name: metrics
-                  protocol: TCP
-                resources:
-                  requests:
-                    memory: 10Mi
-              - name: healthz
-                image: sapcc/exechealthz-amd64:1.2
-                resources:
-                limits:
-                  memory: 50Mi
-                requests:
-                  cpu: 10m
-                  # Note that this container shouldn't really need 50Mi of memory. The
-                  # limits are set higher than expected pending investigation on #29688.
-                  # The extra memory was stolen from the kubedns container to keep the
-                  # net memory requested by the pod constant.
-                  memory: 50Mi
-                args:
-                - --cmd=nslookup kubernetes.default.svc.{{.kubernetes.domain}} 127.0.0.1 >/dev/null
-                - --url=/healthz-dnsmasq
-                - --cmd=nslookup kubernetes.default.svc.{{.kubernetes.domain}} 127.0.0.1:10053 >/dev/null
-                - --url=/healthz-kubedns
-                - --port=8080
-                - --quiet
-                ports:
-                - containerPort: 8080
-                  protocol: TCP
-              volumes:
+                  - name: var-lib-etcd2
+                    mountPath: /var/lib/etcd2
+
+    - filesystem: "root"
+      path: /etc/kubernetes/manifests/kubernetes.manifest
+      mode: 0644
+      contents: 
+        inline: |
+          apiVersion: v1
+          kind: Pod
+          metadata: 
+            name: kubernetes
+            namespace: kube-system
+          spec: 
+            hostNetwork: true
+            volumes:
               - name: etc-kubernetes
                 hostPath:
                   path: /etc/kubernetes
-              dnsPolicy: Default  # Don't use cluster DNS.
+              - name: etc-ssl-certs 
+                hostPath:
+                  path: /etc/ssl/certs/
+            containers: 
+              - name: apiserver
+                securityContext:
+                  capabilities:
+                    add:
+                      - NET_ADMIN
+                image: sapcc/hyperkube-amd64:{{.kubernetes.version}}
+                args: 
+                  - /hyperkube
+                  - apiserver
+                  - --admission-control=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,ResourceQuota
+                  - --allow-privileged=true
+          # This flag ensures 3 endpoints in the kubernetes service which is wrong when one node is down
+          # leading to traffic hitting the downed node.
+          # Currently this leads to reconfiguring endpoints when this is commented out, but will not pose
+          # a problem until someone uses the ingress resource.
+          #        - --apiserver-count=3
+                  - --authorization-mode=ABAC
+                  - --authorization-policy-file=/etc/kubernetes/authorizations.jsonl
+                  - --advertise-address={{.kubernetes.master_address}}
+                  - --client-ca-file=/etc/kubernetes/ssl/ca.pem
+                  - --etcd-servers=http://127.0.0.1:2379
+                  - --kubelet-certificate-authority=/etc/kubernetes/ssl/ca.pem
+                  - --kubelet-client-certificate=/etc/kubernetes/ssl/kubelet-{{.hostname}}-{{.internal_network.address}}.pem
+                  - --kubelet-client-key=/etc/kubernetes/ssl/kubelet-{{.hostname}}-{{.internal_network.address}}-key.pem
+                  - --kubelet-https=true
+                  - --runtime-config=extensions/v1beta1=true,extensions/v1beta1/thirdpartyresources=true
+                  - --secure_port=443
+                  - --service-account-key-file=/etc/kubernetes/ssl/ca-key.pem
+                  - --service-cluster-ip-range={{.kubernetes.services_subnet_cidr}}
+                  - --tls-cert-file=/etc/kubernetes/ssl/apiserver-{{.hostname}}-{{.internal_network.address}}.pem
+                  - --tls-private-key-file=/etc/kubernetes/ssl/apiserver-{{.hostname}}-{{.internal_network.address}}-key.pem
+                  - --bind-address={{.kubernetes.master_address}}
+                lifecycle:
+                  postStart:
+                    exec:
+                      command:
+                        - sh
+                        - -ec
+                        - |
+                          if ! ip addr list dummy0 | grep -q {{.kubernetes.master_address_cidr}}; then
+                            ip addr add {{.kubernetes.master_address_cidr}} dev dummy0
+                          fi
+                          if ! iptables -t nat -C PREROUTING -p tcp -d {{.internal_network.address}} --dport 443 -j DNAT --to-destination {{.kubernetes.master_address}}:443 2>/dev/null; then
+                            iptables -t nat -A PREROUTING -p tcp -d {{.internal_network.address}} --dport 443 -j DNAT --to-destination {{.kubernetes.master_address}}:443
+                          fi
+                  preStop:
+                    exec:
+                      command:
+                        - sh
+                        - -ec
+                        - |
+                          if iptables -t nat -C PREROUTING -p tcp -d {{.internal_network.address}} --dport 443 -j DNAT --to-destination {{.kubernetes.master_address}}:443 2>/dev/null; then
+                            iptables -t nat -D PREROUTING -p tcp -d {{.internal_network.address}} --dport 443 -j DNAT --to-destination {{.kubernetes.master_address}}:443
+                          fi
+                          if ip addr list dummy0 | grep -q {{.kubernetes.master_address_cidr}}; then
+                            ip addr del {{.kubernetes.master_address_cidr}} dev dummy0
+                          fi
+                livenessProbe:
+                  httpGet:
+                    host: 127.0.0.1 
+                    path: /healthz
+                    port: 8080
+                  initialDelaySeconds: 15
+                  timeoutSeconds: 1
+                volumeMounts:
+                  - mountPath: /etc/kubernetes
+                    name: etc-kubernetes
+                    readOnly: true
+                  - mountPath: /etc/ssl/certs
+                    name: etc-ssl-certs 
+                    readOnly: true
+              - name: controller-manager
+                image: sapcc/hyperkube-amd64:{{.kubernetes.version}}
+                args: 
+                  - /hyperkube
+                  - controller-manager
+                  - --kubeconfig=/etc/kubernetes/config/controller-manager
+                  - --leader-elect=true
+                  - --root-ca-file=/etc/kubernetes/ssl/ca.pem
+                  - --service-account-private-key-file=/etc/kubernetes/ssl/ca-key.pem
+                livenessProbe:
+                  httpGet:
+                    host: 127.0.0.1 
+                    path: /healthz
+                    port: 10252
+                  initialDelaySeconds: 15
+                  timeoutSeconds: 1
+                volumeMounts:
+                  - mountPath: /etc/kubernetes
+                    name: etc-kubernetes
+                    readOnly: true
+              - name: scheduler
+                image: sapcc/hyperkube-amd64:{{.kubernetes.version}}
+                args: 
+                  - /hyperkube
+                  - scheduler 
+                  - --kubeconfig=/etc/kubernetes/config/scheduler
+                  - --leader-elect=true
+                livenessProbe:
+                  httpGet:
+                    host: 127.0.0.1 
+                    path: /healthz
+                    port: 10251
+                  initialDelaySeconds: 15
+                  timeoutSeconds: 1
+                volumeMounts:
+                  - mountPath: /etc/kubernetes
+                    name: etc-kubernetes
+                    readOnly: true
+    - filesystem: "root" 
+      path: /etc/kubernetes/authorizations.jsonl
+      mode: 0644
+      contents: 
+        inline: |
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"*", "nonResourcePath": "*", "readonly": true}}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"kubelet",                                       "namespace": "*",               "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"proxy",                                         "namespace": "*",               "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"dns",                                           "namespace": "*",               "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"scheduler",                                     "namespace": "*",               "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"controller-manager",                            "namespace": "*",               "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"monsoon",                                       "namespace": "*",               "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"cfm",                                           "namespace": "cfm",             "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"support",                                       "namespace": "quay-enterprise", "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"user@monsoon",                                  "namespace": "*",               "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"user@admin",                                    "namespace": "*",               "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"user@viewer",                                   "namespace": "*",               "resource": "*", "apiGroup": "*", "readonly": true }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"user@cfm",                                      "namespace": "cfm",             "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"user@support",                                  "namespace": "quay-enterprise", "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"system:serviceaccount:kube-system:default",     "namespace": "*",               "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"system:serviceaccount:kube-monitoring:default", "namespace": "*",               "resource": "*", "apiGroup": "*", "readonly": true }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"system:serviceaccount:quay-enterprise:default", "namespace": "quay-enterprise", "resource": "*", "apiGroup": "*" }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"system:serviceaccount:elk:default",         "namespace": "*",               "resource": "*", "apiGroup": "*", "readonly": true }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"system:serviceaccount:monsoon3:default",        "namespace": "*",               "resource": "*", "apiGroup": "*", "readonly": true }}
+          {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"system:serviceaccount:sentry:default",          "namespace": "*",               "resource": "*", "apiGroup": "*" }}
+    - filesystem: "root"
+      path: /etc/kubernetes/manifests/kube-dns.manifest
+      mode: 0644
+      contents:
+        inline: |
+          apiVersion: v1
+          kind: Pod
+          metadata:
+            name: kube-dns
+            namespace: kube-system
+            labels:
+              k8s-app: kube-dns
+              kubernetes.io/cluster-service: "true"
+          spec:
+            containers:
+            - name: kubedns
+              image: sapcc/kubedns-amd64:1.8
+              resources:
+                # TODO: Set memory limits when we've profiled the container for large
+                # clusters, then set request = limit to keep this container in
+                # guaranteed class. Currently, this container falls into the
+                # "burstable" category so the kubelet doesn't backoff from restarting it.
+                limits:
+                  memory: 170Mi
+                requests:
+                  cpu: 100m
+                  memory: 70Mi
+              livenessProbe:
+                httpGet:
+                  path: /healthz
+                  port: 8080
+                  scheme: HTTP
+                initialDelaySeconds: 60
+                timeoutSeconds: 5
+                successThreshold: 1
+                failureThreshold: 5
+              readinessProbe:
+                httpGet:
+                  path: /readiness
+                  port: 8081
+                  scheme: HTTP
+                # we poll on pod startup for the Kubernetes master service and
+                # only setup the /readiness HTTP server once that's available.
+                initialDelaySeconds: 30
+                timeoutSeconds: 5
+              args:
+              - --domain={{.kubernetes.domain}}
+              - --dns-port=10053
+              - --kubecfg-file=/etc/kubernetes/config/dns
+              - --v=0
+              env:
+              - name: PROMETHEUS_PORT
+                value: "10055"
+              volumeMounts:
+              - mountPath: /etc/kubernetes
+                name: etc-kubernetes
+                readOnly: true
+              ports:
+              - containerPort: 10053
+                name: dns-local
+                protocol: UDP
+              - containerPort: 10053
+                name: dns-tcp-local
+                protocol: TCP
+              - containerPort: 10055
+                name: metrics
+                protocol: TCP
+            - name: dnsmasq
+              image: sapcc/kube-dnsmasq-amd64:1.4
+              livenessProbe:
+                httpGet:
+                  path: /healthz-dnsmasq
+                  port: 8080
+                  scheme: HTTP
+                initialDelaySeconds: 60
+                timeoutSeconds: 5
+                successThreshold: 1
+                failureThreshold: 5
+              args:
+              - --cache-size=1000
+              - --no-resolv
+              - --server=127.0.0.1#10053
+              ports:
+              - containerPort: 53
+                name: dns
+                protocol: UDP
+              - containerPort: 53
+                name: dns-tcp
+                protocol: TCP
+              resources:
+                requests:
+                  cpu: 150m
+                  memory: 10Mi
+            - name: dnsmasq-metrics
+              image: sapcc/dnsmasq-metrics-amd64:1.0
+              livenessProbe:
+                httpGet:
+                  path: /metrics
+                  port: 10054
+                  scheme: HTTP
+                initialDelaySeconds: 60
+                timeoutSeconds: 5
+                successThreshold: 1
+                failureThreshold: 5
+              args:
+              - --v=2
+              - --logtostderr
+              ports:
+              - containerPort: 10054
+                name: metrics
+                protocol: TCP
+              resources:
+                requests:
+                  memory: 10Mi
+            - name: healthz
+              image: sapcc/exechealthz-amd64:1.2
+              resources:
+              limits:
+                memory: 50Mi
+              requests:
+                cpu: 10m
+                # Note that this container shouldn't really need 50Mi of memory. The
+                # limits are set higher than expected pending investigation on #29688.
+                # The extra memory was stolen from the kubedns container to keep the
+                # net memory requested by the pod constant.
+                memory: 50Mi
+              args:
+              - --cmd=nslookup kubernetes.default.svc.{{.kubernetes.domain}} 127.0.0.1 >/dev/null
+              - --url=/healthz-dnsmasq
+              - --cmd=nslookup kubernetes.default.svc.{{.kubernetes.domain}} 127.0.0.1:10053 >/dev/null
+              - --url=/healthz-kubedns
+              - --port=8080
+              - --quiet
+              ports:
+              - containerPort: 8080
+                protocol: TCP
+            volumes:
+            - name: etc-kubernetes
+              hostPath:
+                path: /etc/kubernetes
+            dnsPolicy: Default  # Don't use cluster DNS.
 
-        - path: /etc/kubernetes/manifests/kube-externalip.manifest
-          mode: 0644
-          contents: |
-            apiVersion: v1
-            kind: Pod
-            metadata:
-              name: kube-externalip
-              namespace: kube-system
-            spec:
-              hostNetwork: true
-              volumes:
-                - name: etc-kubernetes
-                  hostPath:
-                    path: /etc/kubernetes
-              containers:
-                - name: externalip
-                  image: sapcc/kube-externalip:0.2.2
-                  args:
-                    - --logtostderr
-                    - --interface=dummy0
-                    - --ignore-address={{.kubernetes.master_address_cidr}}
-                    - --source-address={{.internal_network.address}}
-                    - --kubeconfig=/etc/kubernetes/config/proxy
-                  volumeMounts:
-                    - mountPath: /etc/kubernetes
-                      name: etc-kubernetes
-                      readOnly: true
-                  securityContext:
-                    privileged: true
+    - filesystem: "root"
+      path: /etc/kubernetes/manifests/kube-externalip.manifest
+      mode: 0644
+      contents: 
+        inline: |
+          apiVersion: v1
+          kind: Pod
+          metadata:
+            name: kube-externalip
+            namespace: kube-system
+          spec:
+            hostNetwork: true
+            volumes:
+              - name: etc-kubernetes
+                hostPath:
+                  path: /etc/kubernetes
+            containers:
+              - name: externalip
+                image: sapcc/kube-externalip:0.2.2
+                args:
+                  - --logtostderr
+                  - --interface=dummy0
+                  - --ignore-address={{.kubernetes.master_address_cidr}}
+                  - --source-address={{.internal_network.address}}
+                  - --kubeconfig=/etc/kubernetes/config/proxy
+                volumeMounts:
+                  - mountPath: /etc/kubernetes
+                    name: etc-kubernetes
+                    readOnly: true
+                securityContext:
+                  privileged: true
 
-        - path: /etc/kubernetes/manifests/kube-proxy.manifest
-          mode: 0644
-          contents: |
-            apiVersion: v1
-            kind: Pod
-            metadata: 
-              name: kube-proxy
-              namespace: kube-system
-            spec: 
-              hostNetwork: true
-              volumes:
-                - name: etc-kubernetes
-                  hostPath:
-                    path: /etc/kubernetes
-              containers: 
-                - name: proxy 
-                  image: sapcc/hyperkube-amd64:{{.kubernetes.version}}
-                  args: 
-                    - /hyperkube
-                    - proxy 
-                    - --bind-address={{.internal_network.address}}
-                    - --disable-externalip-security-measures=true
-                    - --kubeconfig=/etc/kubernetes/config/proxy
-                  livenessProbe:
-                    httpGet:
-                      host: 127.0.0.1 
-                      path: /healthz
-                      port: 10249
-                    initialDelaySeconds: 15
-                    timeoutSeconds: 1
-                  volumeMounts:
-                    - mountPath: /etc/kubernetes
-                      name: etc-kubernetes
-                      readOnly: true
-                  securityContext:
-                    privileged: true
-        - path: /etc/kubernetes/manifests/kube-parrot.manifest
-          mode: 0644
-          contents: |
-            apiVersion: v1
-            kind: Pod
-            metadata:
-              name: kube-parrot
-              namespace: kube-system
-            spec:
-              hostNetwork: true
-              volumes:
-                - name: etc-kubernetes
-                  hostPath:
-                    path: /etc/kubernetes
-              containers:
-                - name: parrot
-                  image: sapcc/kube-parrot:v201611131942
-                  volumeMounts:
-                    - mountPath: /etc/kubernetes
-                      name: etc-kubernetes
-                      readOnly: true
-                  args:
-                    - --local_address={{.internal_network.address}}
-                    - --master_address={{.kubernetes.master_address}}
-                    - --service_subnet={{.kubernetes.services_subnet_cidr}}
-                    - --as={{.bgp.remote}}
-                    - --logtostderr
-                    - --v=5
-                    - --kubeconfig=/etc/kubernetes/config/parrot
-{{range $neighbor := .bgp.neighbors}}                    - --neighbor={{$neighbor.address}}
-{{end}}
+    - filesystem: "root"
+      path: /etc/kubernetes/manifests/kube-proxy.manifest
+      mode: 0644
+      contents: 
+        inline: |
+          apiVersion: v1
+          kind: Pod
+          metadata: 
+            name: kube-proxy
+            namespace: kube-system
+          spec: 
+            hostNetwork: true
+            volumes:
+              - name: etc-kubernetes
+                hostPath:
+                  path: /etc/kubernetes
+            containers: 
+              - name: proxy 
+                image: sapcc/hyperkube-amd64:{{.kubernetes.version}}
+                args: 
+                  - /hyperkube
+                  - proxy 
+                  - --bind-address={{.internal_network.address}}
+                  - --disable-externalip-security-measures=true
+                  - --kubeconfig=/etc/kubernetes/config/proxy
+                livenessProbe:
+                  httpGet:
+                    host: 127.0.0.1 
+                    path: /healthz
+                    port: 10249
+                  initialDelaySeconds: 15
+                  timeoutSeconds: 1
+                volumeMounts:
+                  - mountPath: /etc/kubernetes
+                    name: etc-kubernetes
+                    readOnly: true
+                securityContext:
+                  privileged: true
+    - filesystem: "root"
+      path: /etc/kubernetes/manifests/kube-parrot.manifest
+      mode: 0644
+      contents: 
+        inline: |
+          apiVersion: v1
+          kind: Pod
+          metadata:
+            name: kube-parrot
+            namespace: kube-system
+          spec:
+            hostNetwork: true
+            volumes:
+              - name: etc-kubernetes
+                hostPath:
+                  path: /etc/kubernetes
+            containers:
+              - name: parrot
+                image: sapcc/kube-parrot:v201611131942
+                volumeMounts:
+                  - mountPath: /etc/kubernetes
+                    name: etc-kubernetes
+                    readOnly: true
+                args:
+                  - --local_address={{.internal_network.address}}
+                  - --master_address={{.kubernetes.master_address}}
+                  - --service_subnet={{.kubernetes.services_subnet_cidr}}
+                  - --as={{.bgp.remote}}
+                  - --logtostderr
+                  - --v=5
+                  - --kubeconfig=/etc/kubernetes/config/parrot
+  {{range $neighbor := .bgp.neighbors}}
+                  - --neighbor={{$neighbor.address}}
+  {{end}}
 {{end}}
 
 {{ range $client := .kubernetes.clients }}
-        - path: /etc/kubernetes/config/{{$client}}
-          mode: 0644
-          contents: |
-            apiVersion: v1
-            kind: Config
-            clusters:
-              - name: local
-                cluster:
-                   certificate-authority: /etc/kubernetes/ssl/ca.pem
-                   server: "https://{{$.kubernetes.master_address}}"
-            contexts:
-              - name: local 
-                context:
-                  cluster: local
-                  user: local 
-            current-context: local
-            users:
-              - name: local
-                user:
-                  {{if eq $client "kubelet" "apiserver"}}
-                  client-certificate: /etc/kubernetes/ssl/{{$client}}-{{$.hostname}}-{{$.internal_network.address}}.pem
-                  client-key: /etc/kubernetes/ssl/{{$client}}-{{$.hostname}}-{{$.internal_network.address}}-key.pem
-                  {{else}}
-                  client-certificate: /etc/kubernetes/ssl/{{$client}}.pem
-                  client-key: /etc/kubernetes/ssl/{{$client}}-key.pem
-                  {{end}}
+    - filesystem: "root"
+      path: /etc/kubernetes/config/{{$client}}
+      mode: 0644
+      contents: 
+        inline: |
+          apiVersion: v1
+          kind: Config
+          clusters:
+            - name: local
+              cluster:
+                 certificate-authority: /etc/kubernetes/ssl/ca.pem
+                 server: "https://{{$.kubernetes.master_address}}"
+          contexts:
+            - name: local 
+              context:
+                cluster: local
+                user: local 
+          current-context: local
+          users:
+            - name: local
+              user:
+                {{if eq $client "kubelet" "apiserver"}}
+                client-certificate: /etc/kubernetes/ssl/{{$client}}-{{$.hostname}}-{{$.internal_network.address}}.pem
+                client-key: /etc/kubernetes/ssl/{{$client}}-{{$.hostname}}-{{$.internal_network.address}}-key.pem
+                {{else}}
+                client-certificate: /etc/kubernetes/ssl/{{$client}}.pem
+                client-key: /etc/kubernetes/ssl/{{$client}}-key.pem
+                {{end}}
 {{end}}
-        - path: /etc/kubernetes/config/parrot
-          mode: 0644
-          contents: |
-            apiVersion: v1
-            kind: Config
-            clusters:
-              - name: local
-                cluster:
-                  server: "http://localhost:8080"
-            contexts:
-              - name: local 
-                context:
-                  cluster: local
-                  user: local 
-            current-context: local
-            users:
-              - name: local
+    - filesystem: "root"
+      path: /etc/kubernetes/config/parrot
+      mode: 0644
+      contents: 
+        inline: |
+          apiVersion: v1
+          kind: Config
+          clusters:
+            - name: local
+              cluster:
+                server: "http://localhost:8080"
+          contexts:
+            - name: local 
+              context:
+                cluster: local
+                user: local 
+          current-context: local
+          users:
+            - name: local
 {{ if .multipath }}
-        - path: /etc/multipath.conf
-          mode: 0644
-          contents: |
-            defaults {
-              user_friendly_names yes
-              find_multipaths yes
-            }
+    - filesystem: "root"
+      path: /etc/multipath.conf
+      mode: 0644
+      contents: 
+        inline: |
+          defaults {
+            user_friendly_names yes
+            find_multipaths yes
+          }
 {{ end }}
 
 passwd:
   users:
     - name: core
       password_hash: "$1$j4sBU0k0$mLgiqlILFKg1sy8OPZQUd0"
-      {{ if .ssh_authorized_keys }}
+      {{ if index . "ssh_authorized_keys" }}
       ssh_authorized_keys:
         {{ range $element := .ssh_authorized_keys }}
         - {{$element}}

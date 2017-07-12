@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: profiles-{{ .Release.Name }}
+  labels:
+    app: matchbox
+
+data:
+{{ (.Files.Glob "profiles/*.json").AsConfig | indent 1 }}

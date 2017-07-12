@@ -22,9 +22,14 @@ spec:
         - name: ignition-{{ .Release.Name }}
           configMap:
             name: ignition-{{ .Release.Name }}
+        - name: profiles-{{ .Release.Name }}
+          configMap:
+            name: profiles-{{ .Release.Name }}
       containers:
         - name: matchbox
-          image: hub.global.cloud.sap/monsoon/matchbox:v0.6.1
+          image: quay.io/coreos/matchbox:v0.6.1
+          args:
+            - -address=0.0.0.0:8080
           ports:
             - containerPort: 8080
           livenessProbe:
@@ -44,3 +49,5 @@ spec:
               mountPath: /var/lib/matchbox/groups
             - name: ignition-{{ .Release.Name }}
               mountPath: /var/lib/matchbox/ignition
+            - name: profiles-{{ .Release.Name }}
+              mountPath: /var/lib/matchbox/profiles
