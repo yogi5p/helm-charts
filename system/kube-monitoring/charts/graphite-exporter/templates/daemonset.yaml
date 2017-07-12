@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: graphite-exporter
+spec:
+  template:
+    metadata:
+      name: graphite-exporter
+      labels:
+        app: graphite-exporter
+    spec:
+      hostNetwork: true
+      hostPID: true
+      containers:
+        - image: prom/graphite-exporter
+          name: graphite-exporter
+          ports:
+            - name: graphite-udp
+              containerPort: 9109
+              hostPort: 9109
+              protocol: UDP
+            - name: graphite-tcp
+              containerPort: 9109
+              hostPort: 9109
+              protocol: TCP
+            - name: prom
+              containerPort: 9108
+              hostPort: 9108
+              protocol: TCP
