@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    app: {{ template "snmp-exporter.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+
+data:
+  snmp.yml: |
+{{ include "snmp-exporter/templates/_snmp.yml.tpl" . | indent 4 }}
