@@ -6,10 +6,10 @@ metadata:
     app: {{ template "snmp-exporter.name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
 spec:
-  type: {{ .Values.service.type }}
+  type: {{ .Values.snmp_exporter.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: {{ .Values.snmp_exporter.service.port }}
       protocol: TCP
-      name: {{ .Values.service.name }}
+      name: {{ .Values.snmp_exporter.service.name }}
   selector:
     app: {{ .Chart.Name }}

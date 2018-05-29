@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: prometheus-snmp
+spec:
+  revisionHistoryLimit: 5
+  replicas: 1
+  minReadySeconds: 10
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: prometheus
+        type: snmp
+        component: prometheus-snmp
+    spec:
+      terminationGracePeriodSeconds: 600
+      containers:
+        - name: prometheus
+          image: "{{ .Values.prometheus.image }}"
+          args:
+            - -config.file=/etc/prometheus/prometheus.yaml
+            - -storage.local.retention={{ .Values.prometheus.retention }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.prometheus.listen_port }}
+          volumeMounts:
+            - name: config
+              mountPath: /etc/prometheus
+            - name: targets
+              mountPath: /etc/snmp_exporter
+      volumes:
+        - name: config
+          configMap:
+            name: prometheus
+        - name: targets
+          configMap:
+            name: targets

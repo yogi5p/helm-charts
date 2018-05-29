@@ -8,21 +8,21 @@ metadata:
 
 spec:
   revisionHistoryLimit: 5
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.snmp_exporter.replicaCount }}
   template:
     metadata:
       labels:
         app: {{ template "snmp-exporter.name" . }}
       annotations:
         prometheus.io/scrape: 'true'
-        prometheus.io/port: {{ .Values.service.port | quote }}
+        prometheus.io/port: {{ .Values.snmp_exporter.service.port | quote }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          image: "{{ .Values.snmp_exporter.image.repository }}:{{ .Values.snmp_exporter.image.tag }}"
+          imagePullPolicy: {{ .Values.snmp_exporter.image.pullPolicy }}
           ports:
-            - containerPort: {{ .Values.service.port }}
+            - containerPort: {{ .Values.snmp_exporter.service.port }}
           args:
             - --config.file=/etc/snmp_exporter/snmp.yml
           volumeMounts:
