@@ -20,8 +20,8 @@ spec:
         - name: prometheus
           image: "{{ .Values.prometheus.image }}"
           args:
-            - -config.file=/etc/prometheus/prometheus.yaml
-            - -storage.local.retention={{ .Values.prometheus.retention }}
+            - --config.file=/etc/prometheus/prometheus.yaml
+            - --storage.tsdb.retention={{ .Values.prometheus.retention }}
           ports:
             - name: http
               containerPort: {{ .Values.prometheus.listen_port }}

@@ -14,5 +14,5 @@ snmp_exporter:
 
 prometheus:
   image: prom/prometheus:v2.2.1
-  retention: 1h0m0s
+  retention: 1h
   listen_port: 9090
