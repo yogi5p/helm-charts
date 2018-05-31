@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: prometheus-snmp
+  name: prometheus
 spec:
   revisionHistoryLimit: 5
   replicas: 1
@@ -13,7 +13,7 @@ spec:
       labels:
         app: prometheus
         type: snmp
-        component: prometheus-snmp
+        component: prometheus
     spec:
       terminationGracePeriodSeconds: 600
       containers:
