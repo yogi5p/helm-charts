@@ -4,7 +4,7 @@ groups:
   - alert: VVolDatastoreNotAccessible
     expr: |
       vcenter_datastore_accessible{component=~".+vcdatastoremetrics$", type="VVOL"} == 0
-    for: 10m
+    for: 5m
     labels:
       severity: critical
       tier: vmware
@@ -17,7 +17,7 @@ groups:
 
   - alert: VVolDatastoreNotAccessibleFromHost
     expr: vcenter_datastore_accessible_from_host{type="VVOL"} == 0
-    for: 10m
+    for: 5m
     labels:
       severity: critical
       tier: vmware
@@ -45,7 +45,6 @@ groups:
 
   - alert: VVolDatastoreZeroFreeSpace
     expr: vcenter_datastore_free_space_bytes{component=~".+vcdatastoremetrics$", type="VVOL"} == 0
-    for: 10m
     labels:
       severity: critical
       tier: vmware
