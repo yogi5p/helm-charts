@@ -1,0 +1,56 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}-snuba-api
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        checksum/snubaSettingsPy: {{ .Values.config.snubaSettingsPy | sha256sum }}
+        checksum/config.yaml: {{ include (print $.Template.BasePath "/configmap-snuba.yaml") . | sha256sum }}
+      labels:
+        app: {{ template "fullname" . }}
+        release: "{{ .Release.Name }}"
+        role: snuba-api
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}-snuba
+        image: "{{ template "snuba.image" . }}"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: {{ template "snuba.port" }}
+        env:
+        - name: SNUBA_SETTINGS
+          value: /etc/snuba/settings.py
+        volumeMounts:
+        - mountPath: /etc/snuba
+          name: config
+          readOnly: true
+        livenessProbe:
+          failureThreshold: 5
+          httpGet:
+            path: /
+            port: {{ template "snuba.port" }}
+            scheme: HTTP
+          initialDelaySeconds: {{ .Values.snuba.api.probeInitialDelaySeconds }}
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 2
+        readinessProbe:
+          failureThreshold: 10
+          httpGet:
+            path: /
+            port: {{ template "snuba.port" }}
+            scheme: HTTP
+          initialDelaySeconds: {{ .Values.snuba.api.probeInitialDelaySeconds }}
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 2
+        resources:
+      volumes:
+        - name: config
+          configMap:
+            name: {{ template "fullname" . }}-snuba

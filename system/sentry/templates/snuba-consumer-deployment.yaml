@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}-snuba-consumer
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        checksum/snubaSettingsPy: {{ .Values.config.snubaSettingsPy | sha256sum }}
+        checksum/config.yaml: {{ include (print $.Template.BasePath "/configmap-snuba.yaml") . | sha256sum }}
+      labels:
+        app: {{ template "fullname" . }}
+        release: "{{ .Release.Name }}"
+        role: snuba-consumer
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}-snuba
+        image: "{{ template "snuba.image" . }}"
+        imagePullPolicy: IfNotPresent
+        command: ["snuba", "consumer", "--storage", "events", "--auto-offset-reset=latest", "--max-batch-time-ms", "750"]
+        ports:
+        - containerPort: {{ template "snuba.port" }}
+        env:
+        - name: SNUBA_SETTINGS
+          value: /etc/snuba/settings.py
+        volumeMounts:
+        - mountPath: /etc/snuba
+          name: config
+          readOnly: true
+        resources:
+      volumes:
+        - name: config
+          configMap:
+            name: {{ template "fullname" . }}-snuba
