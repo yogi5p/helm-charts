@@ -49,3 +49,7 @@ To satisfy common/mysql_metrics :(
 
 {{define "keystone_db_host"}}{{- if .Values.global.clusterDomain }}{{.Release.Name}}-mariadb.{{.Release.Namespace}}.svc.{{.Values.global.clusterDomain}}{{ else }}{{.Release.Name}}-mariadb.{{.Release.Namespace}}.svc.kubernetes.{{.Values.global.region}}.{{.Values.global.tld}}{{- end -}}{{end}}
 
+{{- /* Generate backend host for sapcc/openstack-ratelimit-middleware */ -}}
+{{- define "sapcc_rate_limit_backend_host" -}}
+{{- .Chart.Name -}}-sapcc-ratelimit-redis
+{{- end -}}

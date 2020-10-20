@@ -419,6 +419,10 @@ lifesaver:
 cors:
   enabled: false
 
+# sapcc/openstack-rate-limit-middleware
+sapcc_rate_limit:
+  enabled: true
+  
 # Deploy Keystone Prometheus alerts.
 alerts:
   enabled: true

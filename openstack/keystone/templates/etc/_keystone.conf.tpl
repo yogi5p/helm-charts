@@ -234,3 +234,17 @@ allow_headers = Content-Type,Cache-Control,Content-Language,Expires,Last-Modifie
 {{- if .Values.osprofiler.enabled }}
 {{- include "osprofiler" . }}
 {{- end }}
+
+{{ if .Values.sapcc_rate_limit.enabled -}}
+[rate_limit]
+use = egg:rate-limit-middleware#rate-limit
+config_file = /etc/keystone/ratelimit.yaml
+service_type = identity
+rate_limit_by: initiator_project_id
+max_sleep_time_seconds: 20
+clock_accuracy: 1ns
+log_sleep_time_seconds: 10
+backend_host = {{ .Release.Name }}-sapcc-ratelimit-redis
+backend_port: 6379
+backend_timeout_seconds: 20
+{{- end }}

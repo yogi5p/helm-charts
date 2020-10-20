@@ -20,5 +20,8 @@ dependencies:
 - name: jaeger-operator
   repository: https://charts.eu-de-2.cloud.sap
   version: 0.1.0
-digest: sha256:c632aca582aaa4d2efd1858bd4521b1a315dd33ffa1cb4e07fd3f03ae8f903e0
-generated: 2020-10-12T09:18:58.584451113+05:30
+- name: redis
+  repository: file://../../common/redis
+  version: 1.0.1
+digest: sha256:ba0b8a66caf9ca22a56b918457ef047dcb85cfe5a6098afc9ab5e98b07f61a7d
+generated: 2020-10-20T17:32:35.039528522+05:30
