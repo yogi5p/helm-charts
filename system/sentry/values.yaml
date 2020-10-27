@@ -35,6 +35,10 @@ images:
     repository: getsentry/relay
     tag: Chart.AppVersion
     imagePullSecrets: []
+  symbolicator:
+    repository: getsentry/symbolicator
+    tag: 0.2.0
+    imagePullSecrets: []
 
 image:
   repository: sentry
@@ -91,6 +95,21 @@ relay:
   probeInitialDelaySeconds: 10
   # tolerations: []
   # podLabels: []
+
+symbolicator:
+  enabled: true
+  api:
+    replicas: 1
+    env: []
+    probeInitialDelaySeconds: 10
+    resources: {}
+    affinity: {}
+    nodeSelector: {}
+    # tolerations: []
+    # podLabels: []
+    # priorityClassName: "xxx"
+    logging:
+      level: warn
 
 clickhouse:
   enabled: true

@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "sentry.fullname" . }}-symbolicator-api
+  labels:
+    app: {{ template "sentry.fullname" . }}
+spec:
+  template:
+    metadata:
+      annotations:
+        checksum/config.yaml: {{ include (print $.Template.BasePath "/configmap-symbolicator.yaml") . | sha256sum }}
+        {{- if .Values.symbolicator.api.annotations }}
+{{ toYaml .Values.symbolicator.api.annotations | indent 8 }}
+        {{- end }}
+      labels:
+        app: {{ template "sentry.fullname" . }}
+        release: "{{ .Release.Name }}"
+        role: symbolicator-api
+      containers:
+      - name: {{ .Chart.Name }}-symbolicator
+        image: "{{ template "symbolicator.image" . }}"
+        imagePullPolicy: {{ default "IfNotPresent" .Values.images.symbolicator.pullPolicy }}
+        args: ["run", "-c", "/etc/symbolicator/config.yml"]
+        ports:
+        - containerPort: {{ template "symbolicator.port" }}
+        volumeMounts:
+        - mountPath: /etc/symbolicator
+          name: config
+          readOnly: true
+        - mountPath: /data
+          name: symbolicator-data
+        livenessProbe:
+          failureThreshold: 5
+          httpGet:
+            path: /healthcheck
+            port: {{ template "symbolicator.port" }}
+            scheme: HTTP
+          initialDelaySeconds: {{ .Values.symbolicator.api.probeInitialDelaySeconds }}
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 2
+        readinessProbe:
+          failureThreshold: 10
+          httpGet:
+            path: /healthcheck
+            port: {{ template "symbolicator.port" }}
+            scheme: HTTP
+          initialDelaySeconds: {{ .Values.symbolicator.api.probeInitialDelaySeconds }}
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 2
+        resources:
+{{ toYaml .Values.symbolicator.api.resources | indent 12 }}
+      volumes:
+      - name: config
+        configMap:
+          name: {{ template "sentry.fullname" . }}-symbolicator
+      - name: symbolicator-data
+        emptyDir: {}
