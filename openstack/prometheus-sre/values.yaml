@@ -1,0 +1,38 @@
+global:
+  clusterType: metal
+  domain: cloud.sap
+
+  # Defined via secrets.
+  # region:
+
+openstack-prometheus:
+  name: sre
+
+  retentionTime: 365d
+
+  additionalScrapeConfigs:
+    name: sre-additional-scrape-config
+    key: scrape-config.yaml
+
+  ingress:
+    enabled: true
+    hosts:
+      - prometheus-sre
+
+  persistence:
+    enabled: true
+    size: 30Gi
+
+  resources:
+    requests:
+      cpu: 10m
+      memory: 5Gi
+
+  rbac:
+    create: false
+
+  serviceAccount:
+    create: false
+
+kube_state_metrics_exporter:
+  prometheusName: sre

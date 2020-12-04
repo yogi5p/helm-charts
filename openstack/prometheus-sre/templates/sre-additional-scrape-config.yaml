@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+
+metadata:
+  name: sre-additional-scrape-config
+  labels:
+    prometheus: sre
+
+data:
+  scrape-config.yaml: {{ include (print $.Template.BasePath  "/_sre-prometheus.yaml.tpl") . | b64enc }}
