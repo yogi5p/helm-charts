@@ -30,6 +30,7 @@ spec:
         checksum/swift-cluster.etc: {{ include "swift/templates/etc/cluster-configmap.yaml" $ | sha256sum }}
         {{- include "swift_conf_annotations" $ | indent 8 }}
         checksum/swift.bin: {{ include "swift/templates/bin-configmap.yaml" $ | sha256sum }}
+        checksum/swift.secret: {{ include "swift/templates/secret.yaml" $ | sha256sum }}
         checksum/swift.tls-secret: {{ include "swift/templates/tls-secret.yaml" $ | sha256sum }}
         {{- include "swift_ring_annotations" $ | indent 8 }}
         {{- if $.Values.health_exporter }}
@@ -79,6 +80,16 @@ spec:
           env:
             - name: DEBUG_CONTAINER
               value: "false"
+            - name: DISPERSION_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: swift-secret
+                  key: dispersion_password
+            - name: {{ $cluster_id | upper }}_SERVICE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: swift-secret
+                  key: {{ $cluster_id }}_service_password
             {{- if $.Values.sentry.enabled }}
             - name: SENTRY_DSN
               valueFrom:
@@ -122,6 +133,17 @@ spec:
           args:
             - /bin/sh
             - /swift-bin/nginx-start
+          env:
+            - name: DISPERSION_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: swift-secret
+                  key: dispersion_password
+            - name: {{ $cluster_id | upper }}_SERVICE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: swift-secret
+                  key: {{ $cluster_id }}_service_password
           {{- if $.Values.resources.enabled }}
           resources:
             # observed usage: CPU = 10m-500m, RAM = 50-100 MiB
@@ -171,6 +193,12 @@ spec:
             - health-exporter
             - --recon.timeout=20
             - --recon.timeout-host=2
+          env:
+            - name: DISPERSION_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: swift-secret
+                  key: dispersion_password
           ports:
             - name: metrics
               containerPort: 9520
@@ -198,6 +226,12 @@ spec:
         - name: statsd
           image: prom/statsd-exporter:{{$.Values.image_version_auxiliary_statsd_exporter}}
           args: [ --statsd.mapping-config=/swift-etc/statsd-exporter.yaml ]
+          env:
+            - name: DISPERSION_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: swift-secret
+                  key: dispersion_password
           {{- if $.Values.resources.enabled }}
           resources:
             # observed usage: CPU = 10m-100m, RAM = 550-950 MiB
