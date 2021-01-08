@@ -185,6 +185,9 @@ schedulerName: ""
 nodeSelector: {}
 tolerations: []
 
+serviceName: elastiflow-logstash-svc
+nginx: elastiflow-nginx
+
 nameOverride: ""
 fullnameOverride: ""
 

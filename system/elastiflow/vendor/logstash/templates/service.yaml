@@ -14,7 +14,7 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   selector:
-    app: "{{ template "logstash.fullname" . }}"
+    app: "{{ template "logstash.nginx" . }}"
     chart: "{{ .Chart.Name }}"
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
