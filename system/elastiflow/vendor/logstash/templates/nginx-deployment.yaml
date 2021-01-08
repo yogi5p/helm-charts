@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "{{ template "logstash.nginx" . }}"
+  name: elastiflow-logstash-nginx
   labels:
-    app: "{{ template "logstash.nginx" . }}"
+    app: elastiflow-logstash-nginx
     chart: "{{ .Chart.Name }}"
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
 spec:
   selector:
     matchLabels:
-      app: "{{ template "logstash.nginx" . }}"
+      app: elastiflow-logstash-nginx
   replicas: 1
   template:
     metadata:
       labels:
-        app: "{{ template "logstash.nginx" . }}"
+        app: elastiflow-logstash-nginx
     spec:
       containers:
-      - name: "{{ template "logstash.nginx" . }}"
+      - name: elastiflow-logstash-nginx
         image: nginx
         ports:
         - containerPort: 2055
