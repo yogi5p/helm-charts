@@ -11,32 +11,11 @@ spec:
   externalTrafficPolicy: Local
   ports:
   - name: netflow-udp
-    nodePort: 30055
+    nodePort: 30058
     port: 2055
     protocol: UDP
     targetPort: 2055
-  - name: sflow-udp
-    nodePort: 30343
-    port: 6343
-    protocol: UDP
-    targetPort: 6343
-  - name: ipfix-udp
-    nodePort: 30739
-    port: 4739
-    protocol: UDP
-    targetPort: 4739
-  - name: ipfix-tcp
-    nodePort: 30740
-    port: 4739
-    protocol: TCP
-    targetPort: 4739
-  - name: http
-    nodePort: 32352
-    port: 9600
-    protocol: TCP
-    targetPort: 9600
   selector:
     app: {{ template "logstash.fullname" . }}
   sessionAffinity: None
   type: NodePort
-  
