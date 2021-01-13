@@ -12,7 +12,6 @@ spec:
   ports:
 {{ toYaml .Values.nginx.service.ports | indent 4 }}
   selector:
-    selector:
     app: "{{ template "logstash.fullname" . }}-nginx"
     chart: "{{ .Chart.Name }}"
     heritage: {{ .Release.Service | quote }}
