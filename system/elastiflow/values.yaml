@@ -203,6 +203,7 @@ logstash:
   nginx:
     ports:
       - containerPort: 2055
+        protocol: UDP
     service:
       type: NodePort
       externalTrafficPolicy: Local
