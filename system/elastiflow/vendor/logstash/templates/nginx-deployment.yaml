@@ -21,7 +21,7 @@ spec:
       - name: {{ template "logstash.fullname" . }}-nginx
         image: nginx
         ports:
-{{ toYaml .Values.nginx.ports | indent 10 }}
+{{ toYaml .Values.nginx.ports | indent 8 }}
         volumeMounts:
         - mountPath: /etc/nginx
           readOnly: true
