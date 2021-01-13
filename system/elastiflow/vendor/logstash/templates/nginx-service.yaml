@@ -10,7 +10,7 @@ metadata:
 spec:
   externalTrafficPolicy: {{ .Values.nginx.service.externalTrafficPolicy }}
   ports:
-  {{ toYaml .Values.nginx.service.ports | indent 4 }}
+{{ toYaml .Values.nginx.service.ports | indent 4 }}
   selector:
     selector:
     app: "{{ template "logstash.fullname" . }}-nginx"
