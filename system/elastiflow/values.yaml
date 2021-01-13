@@ -200,6 +200,33 @@ logstash:
         port: 9600
         targetPort: 9600
         protocol: TCP
+  nginx:
+    ports:
+      - containerPort: 2055
+    service:
+      type: NodePort
+      externalTrafficPolicy: Local
+      ports:
+        - name: netflow-udp
+          port: 2055
+          targetPort: 2055
+          protocol: UDP
+        - name: sflow-udp
+          port: 6343
+          targetPort: 6343
+          protocol: UDP
+        - name: ipfix-udp
+          port: 4739
+          targetPort: 4739
+          protocol: UDP
+        - name: ipfix-tcp
+          port: 4739
+          targetPort: 4739
+          protocol: TCP
+        - name: http
+          port: 9600
+          targetPort: 9600
+          protocol: TCP
 
   readinessProbe:
     # use ipfix-tcp port instead of http API to better check elastiflow specific status

@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: elastiflow-logstash-nginx
+  name: {{ template "logstash.fullname" . }}-nginx
   labels:
-    app: elastiflow-logstash-nginx
+    app: "{{ template "logstash.fullname" . }}-nginx"
     chart: "{{ .Chart.Name }}"
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
 spec:
   selector:
     matchLabels:
-      app: elastiflow-logstash-nginx
+      app: {{ template "logstash.fullname" . }}-nginx
   replicas: 1
   template:
     metadata:
       labels:
-        app: elastiflow-logstash-nginx
+        app: {{ template "logstash.fullname" . }}-nginx
     spec:
       containers:
-      - name: elastiflow-logstash-nginx
+      - name: {{ template "logstash.fullname" . }}-nginx
         image: nginx
         ports:
-        - containerPort: 2055
+        {{ toYaml .Values.nginx.ports | indent 4 }}
         volumeMounts:
         - mountPath: /etc/nginx
           readOnly: true
