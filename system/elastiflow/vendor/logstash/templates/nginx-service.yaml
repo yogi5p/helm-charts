@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ template "logstash.fullname" . }}-nginx
   labels:
-    app: "{{ template "logstash.fullname" . }}"
+    app: "{{ template "logstash.fullname" . }}-nginx"
     chart: "{{ .Chart.Name }}"
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
