@@ -7,6 +7,8 @@ metadata:
     chart: "{{ .Chart.Name }}"
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
+  annotations:
+    parrot.sap.cc/announce: 'true'
 spec:
   externalTrafficPolicy: {{ .Values.nginx.service.externalTrafficPolicy }}
   ports:
