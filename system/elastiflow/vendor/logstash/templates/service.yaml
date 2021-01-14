@@ -9,8 +9,8 @@ metadata:
     chart: "{{ .Chart.Name }}"
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
-  annotations:
-      parrot.sap.cc/announce: 'true'
+  # annotations:
+  #     parrot.sap.cc/announce: 'true'
 spec:
   type: {{ .Values.service.type }}
   selector:
