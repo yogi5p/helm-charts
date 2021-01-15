@@ -1,11 +1,10 @@
 global:
-  clusterType: metal
   domain: cloud.sap
 
   # Defined via secrets.
   # region:
 
-openstack-prometheus:
+prometheus-sre:
   name: sre
 
   retentionTime: 365d
@@ -31,8 +30,15 @@ openstack-prometheus:
   rbac:
     create: false
 
+  # Comment the `prometheus-sso-cert` if SSO is not used (aka authentication.enabled=false)
+  secrets:
+  - prometheus-sre-sso-cert
+
   serviceAccount:
     create: false
 
 kube_state_metrics_exporter:
   prometheusName: sre
+
+authentication:
+  enabled: true
