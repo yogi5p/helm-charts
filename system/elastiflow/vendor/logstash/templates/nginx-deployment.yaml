@@ -8,6 +8,15 @@ metadata:
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
 spec:
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - elastiflow-logstash
   selector:
     matchLabels:
       app: {{ template "logstash.fullname" . }}-nginx
