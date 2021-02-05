@@ -21,7 +21,7 @@ data:
     }
   virtualhost.conf: |
     upstream logstash_udp_upstream {
-        server {{ template "logstash.fullname" . }}:2055;
+        server {{ template "logstash.fullname" . }}:30055;
     }
     server {
         listen 2055 udp;
