@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "logstash.fullname" . }}-nginx
+  name: {{ template "logstash.fullname" . }}-nginx-2
   labels:
     app: "{{ template "logstash.fullname" . }}-nginx"
     chart: "{{ .Chart.Name }}"
@@ -51,7 +51,7 @@ spec:
       volumes:
         - name: nginx-conf
           configMap:
-            name: elastiflow-nginx-config
+            name: elastiflow-nginx-config-2
             items:
               - key: nginx.conf
                 path: nginx.conf

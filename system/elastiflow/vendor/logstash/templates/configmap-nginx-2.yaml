@@ -1,7 +1,7 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: elastiflow-nginx-config
+  name: elastiflow-nginx-config-2
   labels:
     app: "{{ template "logstash.fullname" . }}-nginx"
     chart: "{{ .Chart.Name }}"
